@@ -30,7 +30,7 @@
     </div>
   {% endif %}
 
-  <div class="trending-list">
+  <div class="popular-list">
     <!-- Second to fifth latest posts -->
     {% for post in site.posts limit: 4 offset: 1 %}
       <div class="post item-{{ forloop.index }}">
@@ -43,13 +43,6 @@
           <h2 class="entry-title">
             <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
           </h2>
-          <small class="d-block text-muted">
-            In <span class="catlist">
-            {% for category in post.categories %}
-              <a class="text-capitalize text-muted smoothscroll" href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
-            {% endfor %}
-            </span>                   
-          </small>
           <small class="text-muted">{{ post.date | date: '%b %d, %Y' }}</small>
         </div>
       </div>
