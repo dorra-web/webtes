@@ -14,14 +14,10 @@
             <h2 class="entry-title">{{ latest_post.title }}</h2>
             <p class="excerpt">{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}</p>
             <div>
-              <small class="d-block text-muted">
-                In <span class="catlist">
                   {% for category in latest_post.categories %}
                     <span class="entry-tag">{{ category }}</span>{% if forloop.last == false %}, {% endif %}
                   {% endfor %}
-                </span>                   
-              </small>
-              <small class="text-muted">{{ latest_post.date | date: '%b %d, %Y' }}</small>
+<div class="entry-meta"><span class="entry-time">{{ latest_post.date | date: '%b %d, %Y' }}</span></div>
             </div>
           </div>
         </a>
