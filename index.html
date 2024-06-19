@@ -14,7 +14,9 @@ layout: default
     <div class="col-md-6">
       <div class="card border-0 mb-4 box-shadow">   
         <a href="{{site.baseurl}}{{latest_post.url}}">
+                {% if post.img %}
 <div class="topfirstimage" style="background-image: url('{{ "/img/" | prepend: site.baseurl | append: post.img }}'); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+            {% endif %}
         </a>
         <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
           <h2 class="h4 font-weight-bold">
