@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Daftar Penerima PIP SK Nominasi dan SK Pemberian Tahun 2024: Informasi Lengkap"
-date:   2023-01-28 19:00:00 -0500
-categories: news update nunit
+date:   2024-06-18 19:00:00 -0500
+img: KalenderPendidikan.jpg
+categories: news
 ---
 
 Program Indonesia Pintar (PIP) adalah bantuan pendidikan yang diberikan oleh pemerintah untuk mencegah siswa kemungkinan putus sekolah dan diharapkan bisa melanjutkan pendidikan hingga selesai. PIP diberikan kepada siswa yang berasal dari keluarga miskin atau rentan miskin dalam membiayai pendidikan. Berikut adalah informasi lengkap tentang daftar penerima PIP SK Nominasi dan SK Pemberian Tahun 2024.
