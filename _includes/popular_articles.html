@@ -1,9 +1,55 @@
+<div class="trending-items">
+  <!-- Latest post -->
+  {% if site.posts.size > 0 %}
+    {% assign latest_post = site.posts.first %}
+    <div class="post item-0">
+      <a class="entry-thumbnail" href="{{ site.baseurl }}{{ latest_post.url }}">
+        {% if latest_post.img %}
+          <div class="thumbnail pbt-lazy" style="background-image: url('{{ site.baseurl }}/img/{{ latest_post.img }}'); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+        {% endif %}
+      </a>
+      <div class="entry-header">
+        <h2 class="entry-title">
+          <a class="text-dark" href="{{ site.baseurl }}{{ latest_post.url }}">{{ latest_post.title }}</a>
+        </h2>
+        <p class="excerpt">{{ latest_post.excerpt | strip_html | strip_newlines | truncate: 136 }}</p>
+        <div>
+          <small class="d-block text-muted">
+            In <span class="catlist">
+            {% for category in latest_post.categories %}
+              <a class="text-capitalize text-muted smoothscroll" href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+            </span>                   
+          </small>
+          <small class="text-muted">{{ latest_post.date | date: '%b %d, %Y' }}</small>
+        </div>
+      </div>
+    </div>
+  {% endif %}
 
-  <ul>
-    {% assign sorted_posts = site.posts | sort: 'news' | reverse %}
-    {% for post in sorted_posts limit: site.popular_articles_count %}
-      <li>
-        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-      </li>
+  <div class="trending-list">
+    <!-- Second to fifth latest posts -->
+    {% for post in site.posts limit: 4 offset: 1 %}
+      <div class="post item-{{ forloop.index }}">
+        {% if post.img %}
+          <a class="entry-thumbnail" href="{{ site.baseurl }}{{ post.url }}">
+            <img class="thumbnail pbt-lazy" src="{{ site.baseurl }}/img/{{ post.img }}" alt="{{ post.title }}">
+          </a>
+        {% endif %}
+        <div class="entry-header">
+          <h2 class="entry-title">
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <small class="d-block text-muted">
+            In <span class="catlist">
+            {% for category in post.categories %}
+              <a class="text-capitalize text-muted smoothscroll" href="{{ site.baseurl }}/categories.html#{{ category | downcase }}">{{ category }}</a>{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+            </span>                   
+          </small>
+          <small class="text-muted">{{ post.date | date: '%b %d, %Y' }}</small>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
+</div>
