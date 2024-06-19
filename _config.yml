@@ -16,6 +16,7 @@ github_username:  nunit
 # Build settings
 markdown: kramdown
 plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
