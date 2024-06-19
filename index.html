@@ -37,12 +37,12 @@ layout: default
 </div>
 {% endif %}
 
-<div class="col-md-6">
+<div class="trending-list">
   <!-- second to fifth latest posts -->
   {% for i in (1..4) %}
   {% assign post = site.posts[i] %}
   {% if post %}
-  <div class="mb-3 d-flex align-items-center">
+  <div class="post item-{{ forloop.index }}">
     {% if post.img %}
     <div class="col-md-4">
       <a href="{{ site.baseurl }}{{ post.url }}">
