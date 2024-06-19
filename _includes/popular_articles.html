@@ -10,12 +10,12 @@
               <div class="thumbnail pbt-lazy" style="background-image: url('{{ site.baseurl }}/img/{{ latest_post.img }}'); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
             </span>
           {% endif %}
-          <div class="entry-header">
-            <h2 class="entry-title">{{ latest_post.title }}</h2>
-            <div>
-                  {% for category in latest_post.categories %}
-                    <span class="entry-tag">{{ category }}</span>{% if forloop.last == false %}, {% endif %}
-                  {% endfor %}
+{% for category in latest_post.categories %}
+<span class="entry-tag">{{ category }}</span>{% if forloop.last == false %}, {% endif %}
+{% endfor %}
+<div class="entry-header">
+<h2 class="entry-title">{{ latest_post.title }}</h2>
+<div>
 <div class="entry-meta"><span class="entry-time">{{ latest_post.date | date: '%b %d, %Y' }}</span></div>
             </div>
           </div>
