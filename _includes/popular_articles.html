@@ -1,4 +1,5 @@
-<div class="trending-items">
+<div class="PopularPosts">
+    <div class="popular-items">
   <!-- Latest post -->
   {% if site.posts.size > 0 %}
     {% assign latest_post = site.posts.first %}
@@ -49,6 +50,7 @@
           <small class="text-muted">{{ post.date | date: '%b %d, %Y' }}</small>
         </div>
       </div>
+</div>
     {% endfor %}
   </div>
 </div>
