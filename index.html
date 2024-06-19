@@ -7,7 +7,8 @@ layout: default
 
  {% include trendingposthome.html %}
 
-
+<div class="main section" id="main" name="Latest Posts">
+  <div class="widget Blog index-blog flex-col" data-version="2" id="Blog1">
 <div class="blog-posts index-post-wrap list-items">
 {% for post in paginator.posts %}
 <article class="post hentry item-{{ forloop.index }}">
@@ -32,8 +33,11 @@ layout: default
 </article>
 
 {% endfor %}
-</div></main>
+</div></div>
+  
+  {% include pagination.html %}
+  </div></main>
 <aside class="sidebar-wrap sticky-sidebar"><div class="sidebar pbt-s section" id="sidebar" name="Sidebar">
  {% include popular_articles.html %}
-</div></aside></section>
-{% include pagination.html %}
+</div></aside>
+  </section>
