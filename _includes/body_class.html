@@ -1,0 +1,11 @@
+{% assign classes = "" %}
+
+{% if page.layout %}
+  {% assign classes = classes | append: page.layout %}
+{% endif %}
+
+{% if page.customClass %}
+  {% assign classes = classes | append: " " | append: page.customClass %}
+{% endif %}
+
+{{ classes }}
