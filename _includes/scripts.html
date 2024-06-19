@@ -4,4 +4,27 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/load.js"></script>
+<style>/* Sticky Sidebar */
+.sticky-sidebar {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 20px; /* Jarak dari atas saat sidebar menjadi sticky */
+}
+</style>
+
+  <script>
+    $(document).ready(function() {
+      $('.sidebar').pbtStickySidebar({
+        containerSelector: '.container',
+        additionalMarginTop: 20,
+        additionalMarginBottom: 20,
+        updateSidebarHeight: true,
+        minWidth: 0,
+        disableOnResponsiveLayouts: true,
+        sidebarBehavior: 'modern',
+        defaultPosition: 'relative',
+        namespace: 'PBT'
+      });
+    });
+  </script>
 {% include google_analytics.html %}
