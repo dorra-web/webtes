@@ -11,13 +11,13 @@ layout: default
 {% if site.posts.size > 0 %}
 {% assign latest_post = site.posts[0] %}
 <div class="post item-0">
-  <div class="card border-0 mb-4 box-shadow">   
-    <a href="{{ site.baseurl }}{{ latest_post.url }}">
+   
+    <a class="entry-thumbnail" href="{{ site.baseurl }}{{ latest_post.url }}">
       {% if latest_post.img %}
-      <div class="topfirstimage" style="background-image: url('{{ site.baseurl }}/img/{{ latest_post.img }}'); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
+      <div class="thumbnail pbt-lazy" style="background-image: url('{{ site.baseurl }}/img/{{ latest_post.img }}'); height: 200px; background-size: cover; background-repeat: no-repeat;"></div>
       {% endif %}
     </a>
-    <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+    <div class="entry-header">
       <h2 class="h4 font-weight-bold">
         <a class="text-dark" href="{{ site.baseurl }}{{ latest_post.url }}">{{ latest_post.title }}</a>
       </h2>
@@ -33,7 +33,7 @@ layout: default
         <small class="text-muted">{{ latest_post.date | date: '%b %d, %Y' }}</small>
       </div>
     </div>
-  </div>
+  
 </div>
 {% endif %}
 
