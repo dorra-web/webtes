@@ -27,4 +27,36 @@
       });
     });
   </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+  let currentPage = 1;
+  const postsContainer = document.getElementById('posts-container');
+  const loadMoreButton = document.getElementById('load-more');
+
+  loadMoreButton.addEventListener('click', function() {
+    currentPage++;
+    fetch(`/page${currentPage}/index.html`)
+      .then(response => {
+        if (response.ok) {
+          return response.text();
+        } else {
+          loadMoreButton.style.display = 'none';
+          throw new Error('No more pages');
+        }
+      })
+      .then(data => {
+        const parser = new DOMParser();
+        const htmlDocument = parser.parseFromString(data, "text/html");
+        const newPosts = htmlDocument.getElementById('posts-container').innerHTML;
+        postsContainer.insertAdjacentHTML('beforeend', newPosts);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  });
+});
+</script>
+
+    
 {% include google_analytics.html %}
