@@ -3,8 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  {% seo %}
 
   <!-- CSS Links -->
   <link rel="stylesheet" href="/css/main.css">
@@ -32,6 +31,5 @@
   <meta name="google-adsense-account" content="ca-pub-1519653189270579"/>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1519653189270579" crossorigin="anonymous"></script>
 
-  <!-- SEO Tag -->
-  {% seo %}
+
 </head>
