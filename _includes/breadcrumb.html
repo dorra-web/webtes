@@ -1,18 +1,51 @@
-<div id="breadcrumbs">
-{% assign crumbs = page.url | remove: '/index.html' | split: '/' %}
-
-    <a href="{{ '/' | relative_url }}">Home</a>
-
-    {% for crumb in crumbs offset: 1 %}
-        /
-        {% if forloop.last %}
-            {{ page.title }}
-        {% else %}
-            {% assign crumb_limit = forloop.index | plus: 1 %}
-            <a href="{{ site.baseurl }}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' }}{% endfor %}">
-                {{- crumb | replace: '-', ' ' | remove: '.html' | capitalize -}}
-            </a>
-        {% endif %}
+{% if page.url != "/" %}
+<nav aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="{{ site.url }}/">Home</a>
+    </li>
+    {% for crumb in page.url | split: "/" %}
+      {% if crumb != "" and crumb != page.url | split: "/" | last %}
+        <li class="breadcrumb-item">
+          <a href="{{ site.url }}/{{ crumb }}">{{ crumb | capitalize }}</a>
+        </li>
+      {% endif %}
     {% endfor %}
-
-</div>
+    <li class="breadcrumb-item active" aria-current="page">
+      {{ page.title }}
+    </li>
+  </ol>
+</nav>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    }
+    {% assign position = 2 %}
+    {% for crumb in page.url | split: "/" %}
+      {% if crumb != "" and crumb != page.url | split: "/" | last %}
+        ,{
+          "@type": "ListItem",
+          "position": {{ position }},
+          "name": "{{ crumb | capitalize }}",
+          "item": "{{ site.url }}/{{ crumb }}"
+        }
+        {% assign position = position | plus: 1 %}
+      {% endif %}
+    {% endfor %}
+    ,{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "name": "{{ page.title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endif %}
