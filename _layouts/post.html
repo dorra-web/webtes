@@ -4,9 +4,7 @@ layout: default
 <div class="content-wrap flex-c">
     <div class="container row-x1 flex-sb">
 <main class='main-wrap'>
-        <article itemscope itemtype="https://schema.org/BlogPosting">
-
-            <header>
+    <header>
 <style>.breadcrumb-list {
   list-style: none;
   padding: 0;
@@ -38,6 +36,9 @@ layout: default
 }
 </style>
                 {% include breadcrumb.html %}
+        <article itemscope itemtype="https://schema.org/BlogPosting">
+
+            
                 <h1 class="entry-title" itemprop="name headline">{{ page.title }}</h1>
                 <p>
                     <em><i class="fas fa-calendar" aria-hidden="true"></i> <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></em>
