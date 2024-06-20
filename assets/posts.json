@@ -1,0 +1,12 @@
+---
+layout: null
+---
+[
+  {% for post in site.posts %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | escape }}",
+    "excerpt": "{{ post.excerpt | strip_html | escape }}"
+  }{% if forloop.last %}{% else %},{% endif %}
+  {% endfor %}
+]
