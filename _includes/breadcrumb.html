@@ -4,12 +4,10 @@
     <li class="breadcrumb-item">
       <a href="{{ site.url }}/">Home</a>
     </li>
-    {% assign path = "" %}
     {% for crumb in page.url | split: "/" %}
       {% if crumb != "" and crumb != page.url | split: "/" | last %}
-        {% assign path = path | append: "/" | append: crumb %}
         <li class="breadcrumb-item">
-          <a href="{{ site.url }}{{ path }}">{{ crumb | capitalize }}</a>
+          <a href="{{ site.url }}/{{ crumb }}">{{ crumb | capitalize }}</a>
         </li>
       {% endif %}
     {% endfor %}
@@ -27,24 +25,16 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": {
-        "@type": "Thing",
-        "@id": "{{ site.url }}/"
-      }
+      "item": "{{ site.url }}/"
     }
     {% assign position = 2 %}
-    {% assign path = "" %}
     {% for crumb in page.url | split: "/" %}
       {% if crumb != "" and crumb != page.url | split: "/" | last %}
-        {% assign path = path | append: "/" | append: crumb %}
         ,{
           "@type": "ListItem",
           "position": {{ position }},
           "name": "{{ crumb | capitalize }}",
-          "item": {
-            "@type": "Thing",
-            "@id": "{{ site.url }}{{ path }}"
-          }
+          "item": "{{ site.url }}/{{ crumb }}"
         }
         {% assign position = position | plus: 1 %}
       {% endif %}
@@ -53,10 +43,7 @@
       "@type": "ListItem",
       "position": {{ position }},
       "name": "{{ page.title }}",
-      "item": {
-        "@type": "Thing",
-        "@id": "{{ site.url }}{{ page.url }}"
-      }
+      "item": "{{ site.url }}{{ page.url }}"
     }
   ]
 }
