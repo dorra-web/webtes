@@ -21,6 +21,15 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
   - jemoji
+
+authors:
+    sal:
+      name:           Salman Alfarizi
+      site:           https://www.pottoin.com
+      avatar:         /assets/images/avatar1.jpg
+      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
+      email:          salmanalfarizi@gmail.com
+      twitter:        https://twitter.com/wowthemesnet
   
 paginate: 10 # Number of posts per page
 paginate_path: "/page:num/"
