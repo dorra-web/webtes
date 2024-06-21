@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Daftar Penerima PIP SK Nominasi dan SK Pemberian Tahun 2024: Informasi Lengkap"
+author: sal
 date:   2024-06-18 19:00:00 -0500
 img: KalenderPendidikan.jpg
 categories: news
