@@ -28,30 +28,9 @@ layout: default
 
         </article>
       
-      <div class='post-share'>
-  <ul class='share-a social color'>
-    <li class='share-label'><span class='sl'><i/></span></li>
-    <li class='facebook has-span'>
-      <a class='bi-facebook sl window-open' href="https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}" rel='nofollow noopener' title='Facebook'>
-        <span>Facebook</span>
-      </a>
-    </li>
-    <li class='twitter has-span'>
-      <a class='bi-twitter sl window-open' href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" rel='nofollow noopener' title='Twitter'>
-        <span>Twitter</span>
-      </a>
-    </li>
-    <li class='whatsapp'>
-      <a class='bi-whatsapp sl window-open' href="https://api.whatsapp.com/send?text={{ page.title | escape }} | {{ page.url | absolute_url }}" rel='nofollow noopener' title='WhatsApp'/>
-    </li>
-    <li class='email'>
-      <a class='bi-email sl window-open' href="mailto:?subject={{ page.title | escape }}&amp;body={{ page.url | absolute_url }}" rel='nofollow noopener' title='Email'/>
-    </li>
-    <li class='show-more'>
-      <button class='sl' aria-label='Show more'/>
-    </li>
-  </ul>
-</div>
+<div class='post-share'> <ul class='share-a social color'> <li class='share-label'><span class='sl'><i/></span></li> <li class='facebook has-span'> <a class='bi-facebook sl window-open' href="https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}" rel='nofollow noopener' title='Facebook'> <span>Facebook</span> </a> </li> <li class='twitter has-span'> <a class='bi-twitter sl window-open' href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" rel='nofollow noopener' title='Twitter'> <span>Twitter</span> </a> </li> <li class='whatsapp'> <a class='bi-whatsapp sl window-open' href="https://api.whatsapp.com/send?text={{ page.title | escape }} | {{ page.url | absolute_url }}" rel='nofollow noopener' title='WhatsApp'/> </li> <li class='email'> <a class='bi-email sl window-open' href="mailto:?subject={{ page.title | escape }}&amp;body={{ page.url | absolute_url }}" rel='nofollow noopener' title='Email'/> </li> <li class='show-more'> <button class='sl' aria-label='Show more'>Show More</button> </li> </ul></div> 
+      
+      <div class='share-modal' style='display:none;'> <div class='modal-header'> <span class='title'>Share to other apps</span> <button class='hide-modal' aria-label='Show less'>Close</button> </div> <ul class='share-b social color'> <li class='facebook'> <a class='bi-facebook window-open' href="https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}" rel='nofollow noopener' title='Facebook'/> </li> <li class='twitter'> <a class='bi-twitter window-open' href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" rel='nofollow noopener' title='Twitter'/> </li> <li class='whatsapp'> <a class='bi-whatsapp window-open' href="https://api.whatsapp.com/send?text={{ page.title | escape }} | {{ page.url | absolute_url }}" rel='nofollow noopener' title='WhatsApp'/> </li> <li class='pinterest-p'> <a class='bi-pinterest window-open' href="https://www.pinterest.com/pin/create/button/?url={{ page.url | absolute_url }}&amp;media={{ page.featuredImage | absolute_url }}&amp;description={{ page.title | escape }}" rel='nofollow noopener' title='Pinterest'/> </li> <li class='linkedin'> <a class='bi-linkedin window-open' href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ page.url | absolute_url }}&amp;title={{ page.title | escape }}" rel='nofollow noopener' title='LinkedIn'/> </li> <li class='reddit'> <a class='bi-reddit window-open' href="https://reddit.com/submit?url={{ page.url | absolute_url }}&amp;title={{ page.title | escape }}" rel='nofollow noopener' title='Reddit'/> </li> <li class='telegram'> <a class='bi-telegram window-open' href="https://telegram.me/share/url?url={{ page.url | absolute_url }}&amp;text={{ page.title | escape }}" rel='nofollow noopener' title='Telegram'/> </li> <li class='email'> <a class='bi-email window-open' href="mailto:?subject={{ page.title | escape }}&amp;body={{ page.url | absolute_url }}" rel='nofollow noopener' title='Email'/> </li> </ul> <div class='modal-footer'> <span class='title'>Copy post link</span> <div class='copy-link'> <input value="{{ page.url | absolute_url }}" readonly='readonly'/> <button class='btn' aria-label='Copy'>Copy</button> </div> </div></div>
 
       
 </div>
