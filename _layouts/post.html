@@ -27,6 +27,33 @@ layout: default
             </div>
 
         </article>
+      
+      <div class='post-share'>
+  <ul class='share-a social color'>
+    <li class='share-label'><span class='sl'><i/></span></li>
+    <li class='facebook has-span'>
+      <a class='bi-facebook sl window-open' href="https://www.facebook.com/sharer.php?u={{ page.url | absolute_url }}" rel='nofollow noopener' title='Facebook'>
+        <span>Facebook</span>
+      </a>
+    </li>
+    <li class='twitter has-span'>
+      <a class='bi-twitter sl window-open' href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}" rel='nofollow noopener' title='Twitter'>
+        <span>Twitter</span>
+      </a>
+    </li>
+    <li class='whatsapp'>
+      <a class='bi-whatsapp sl window-open' href="https://api.whatsapp.com/send?text={{ page.title | escape }} | {{ page.url | absolute_url }}" rel='nofollow noopener' title='WhatsApp'/>
+    </li>
+    <li class='email'>
+      <a class='bi-email sl window-open' href="mailto:?subject={{ page.title | escape }}&amp;body={{ page.url | absolute_url }}" rel='nofollow noopener' title='Email'/>
+    </li>
+    <li class='show-more'>
+      <button class='sl' aria-label='Show more'/>
+    </li>
+  </ul>
+</div>
+
+      
 </div>
 
 
