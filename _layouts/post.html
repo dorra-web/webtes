@@ -40,12 +40,12 @@ layout: default
       <img class="avatar pbt-lazy" src="{{ site.baseurl }}{{ author.avatar }}" alt="{{ author.name }}" width="90"/>
       {% endif %}
     </div>
-    <div class="col-md-10">
-      <h5 class="font-weight-bold">Written by {{ author.name }}
+    <div class="author-description flex-col">
+      <h3 class="author-title">Written by {{ author.name }}
         {% if author.twitter %}
         <span><a target="_blank" href="{{ author.twitter }}" class="btn btn-outline-success btn-sm btn-round ml-2">Follow</a></span>
         {% endif %}
-      </h5>
+      </h3>
       {{ author.bio }}
     </div>
   </div></div>
